@@ -1,6 +1,7 @@
 type DepositEntity @entity {
   id: ID!
   user: Bytes! # address
+  relayer: Bytes! # address
   assetFrom: Bytes! 
   assetTo: Bytes! 
   amount: BigInt! 
@@ -9,6 +10,7 @@ type DepositEntity @entity {
   deadline: BigInt! 
   chainIDFrom: BigInt! 
   chainIDTo: BigInt! 
+  height: BigInt!
 }
 
 type WithdrawEntity @entity {
@@ -21,6 +23,7 @@ type WithdrawEntity @entity {
   nonce: BigInt! 
   chainIDFrom: BigInt! 
   chainIDTo: BigInt! 
+  height: BigInt!
 }
 
 type LockEntity @entity {
@@ -34,6 +37,7 @@ type LockEntity @entity {
   deadline: BigInt! 
   chainIDFrom: BigInt! 
   chainIDTo: BigInt!  
+  height: BigInt!
 }
 
 type DepositForRelayerEntity @entity {
@@ -45,6 +49,7 @@ type DepositForRelayerEntity @entity {
   deadline: BigInt! 
   chainIDFrom: BigInt! 
   chainIDTo: BigInt! 
+  height: BigInt!
 }
 
 type HarvestEntity @entity {
@@ -57,9 +62,10 @@ type HarvestEntity @entity {
   v: Int!
   r: Bytes!
   s: Bytes!
+  height: BigInt!
 }
 
-type HarvestForRealyerEntity @entity {
+type HarvestForRelayerEntity @entity {
   id: ID!
   user: Bytes! # address
   assetFrom: Bytes! 
@@ -68,4 +74,5 @@ type HarvestForRealyerEntity @entity {
   reward: BigInt! 
   chainIDFrom: BigInt! 
   chainIDTo: BigInt! 
+  height: BigInt!
 }
